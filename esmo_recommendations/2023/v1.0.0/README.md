@@ -6,9 +6,9 @@ At this point, variants in the 40 genes from Box1 on page 222 are used.
 
 # Files
 
-- md5sum.txt
 - README.md
 - cancer_susceptibility_genes.csv
+- md5sum.txt
 
 # Origin
 
