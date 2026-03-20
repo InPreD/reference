@@ -16,7 +16,7 @@ At this point, variants in the 40 genes from Box1 on page 222 are used.
 
 # Method
 
-Figure to text, manually.
+The table in Box 1. in the paper was manually parsed into a machine-readable format by placing all gene names into the column `Gene`, the column `CSG actionability class` was translated (`Most`>`MA-CSG`; `High`>`HA-CSG`; `Standard`>`SA-CSG`) and placed into the column `Actionability`, and the columns `All ages` and `Age <30` were translated to `All` and `Age<30`, respectively, and merged into the column `Age`. The table was sorted according to gene name.
 
 # Responsible
 @tina
