@@ -1,8 +1,4 @@
 
-This folder contains data from the "ESMO recommendations 2023 paper"
-used by [tsoppy](https://github.com/InPreD/tsoppy) in the functionality
-generating table of mutations present in cancer susceptibility genes.
-At this point, variants in the 40 genes from Box1 on page 222 are used.
 
 # Files
 
