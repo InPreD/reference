@@ -12,7 +12,7 @@
 
 # Method
 
-The table in Box 1. in the paper was manually parsed into a machine-readable format by placing all gene names into the column `Gene`, the column `CSG actionability class` was translated (`Most`>`MA-CSG` (most actionable cancer susceptibility gene); `High`>`HA-CSG` (highly actionable cancer susceptibility gene); `Standard`>`SA-CSG` (standardly actionable cancer susceptibility gene)) and placed into the column `Actionability`, and the columns `All ages` and `Age <30` were translated to `Allages` and `Age<30`, respectively, and merged into the column `Age`. The table was sorted according to gene name.
+The table in Box 1. in the paper was manually parsed into a machine-readable format by placing all gene names into the column `Gene`, the column `CSG actionability class` was translated (`Most`>`MA-CSG` (most actionable cancer susceptibility gene); `High`>`HA-CSG` (highly actionable cancer susceptibility gene); `Standard`>`SA-CSG` (standardly actionable cancer susceptibility gene)) and placed into the column `Actionability`, and the columns `All ages` and `Age <30` were translated to `Allages` and `Age<30`, respectively, and merged into the column `Age`. The table was sorted according to gene name. The table contains one metadata line starting with `# source: ` following with the url of the paper from which the information was extracted.
 
 # Responsible
 @tinavisnovska
