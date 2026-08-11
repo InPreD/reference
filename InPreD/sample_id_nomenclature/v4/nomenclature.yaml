@@ -6,6 +6,8 @@ project_code:
     IPD: "InPreD OUS"
     IPH: "InPreD HUS"
     IPO: "InPreD St. Olav"
+    IPS: "InPreD Stavanger"
+    IPU: "InPreD UNN"
 patient_code:
   code: yyyy
 nucleic_acid_input_type_code:
@@ -22,28 +24,35 @@ assay_type_code:
     "03": "TSO500 RNA"
     "04": "EPIC DNA methylation"
     "05": "Whole-genome DNA sequencing (WGS)"
-    "06": "TSO500 HRD (TSO500 solid + HRD)"
+    "06": "TSO500 V1 HRD (TSO500 solid + HRD)"
     "07": "Whole-transcriptome RNA sequencing (WTS)"
+    "11": "TSO500 DNA V2 manual"
+    "13": "TSO500 RNA V2 manual"
+    "21": "TSO500 DNA V2 Hamilton"
+    "23": "TSO500 DNA V2 Hamilton"
     "50": "[External] Twist Human Core Exome Plus (DNA)"
     "51": "[External] TruSeq Stranded mRNA"
 sample_type_code:
   code: S
   choices:
-    A: "Post Allotransplantation"
-    C: "Cell-line (T)"
-    D: "Distal metastasis, naive (T)"
-    d: "Distal metastasis, post-treatment (T)"
-    E: "Naive"
-    e: "Post treatment"
-    L: "Liquid (T)"
-    M: "Metastasis (T)"
-    N: "Normal/control"
-    P: "Primary tumor, naive (T)"
-    p: "Primary tumor, post-treatment (T)"
-    R: "Regional metastasis, naive (T)"
-    r: "Regional metastasis, post-treatment (T)"
-    T: "Primary tumor (T)"
-    X: "Unknown (T)"
+    N:
+      N: "Normal/control"
+    T:
+      A: "Post Allotransplantation"
+      C: "Cell-line"
+      D: "Distal metastasis, naive"
+      d: "Distal metastasis, post-treatment"
+      E: "Naive"
+      e: "Post treatment"
+      L: "Liquid"
+      M: "Metastasis"
+      P: "Primary tumor, naive"
+      p: "Primary tumor, post-treatment"
+      Q: "Local Relapse"
+      R: "Regional metastasis, naive"
+      r: "Regional metastasis, post-treatment"
+      T: "Primary tumor"
+      X: "Unknown"
 library_preparation_attempt:
   code: x
   choices:
