@@ -19,9 +19,9 @@ nucleic_acid_input_type_code:
 assay_type_code:
   code: nn
   choices:
-    "01": "TSO500 DNA"
+    "01": "TSO500 V1 DNA"
     "02": "Archer FusionPlex Lung assay"
-    "03": "TSO500 RNA"
+    "03": "TSO500 V1 RNA"
     "04": "EPIC DNA methylation"
     "05": "Whole-genome DNA sequencing (WGS)"
     "06": "TSO500 V1 HRD (TSO500 solid + HRD)"
