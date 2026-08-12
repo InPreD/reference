@@ -32,6 +32,7 @@ assay_type_code:
     "23": "TSO500 DNA V2 Hamilton"
     "50": "[External] Twist Human Core Exome Plus (DNA)"
     "51": "[External] TruSeq Stranded mRNA"
+    "XX": "Unknown"
 sample_type_code:
   code: S
   choices:
