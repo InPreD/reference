@@ -1,4 +1,5 @@
 format: "PPPyyyy-Ann-Sxz-Mll"
+regex_python: "^(?P<project>\w{3})(?P<patient>\d{4})-(?P<input>\w)(?P<assay>\d{2})-(?P<sample>\w)(?P<preparation>\d)(?P<replicate>\d)-(?P<material>\w)(?P<tumor>\d{2})"
 project_code:
   code: PPP
   choices:
