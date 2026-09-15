@@ -1,118 +1,142 @@
+# sample ids consist of 4 sections and 9 elements, with the obligatory dashes serving only as section-separators
 format: "PPPyyyy-Ann-Sxz-Mll"
+# regular expression to be used for sample id parsing in Python
 regex_python: "^(?P<project>\w{3})(?P<patient>\d{4})-(?P<input>\w)(?P<assay>\d{2})-(?P<sample>\w)(?P<preparation>\d)(?P<replicate>\d)-(?P<material>\w)(?P<tumor>\d{2})"
-project_code:
-  code: PPP
-  choices:
-    IPA: "InPreD AHUS"
-    IPD: "InPreD OUS"
-    IPH: "InPreD HUS"
-    IPO: "InPreD St. Olav"
-    IPS: "InPreD Stavanger"
-    IPU: "InPreD UNN"
-patient_code:
-  code: yyyy
-nucleic_acid_input_type_code:
-  code: A
-  choices:
-    C: "Cell-free samples"
-    D: "DNA"
-    R: "RNA"
-assay_type_code:
-  code: nn
-  choices:
-    "01": "TSO500 V1 DNA"
-    "02": "Archer FusionPlex Lung assay"
-    "03": "TSO500 V1 RNA"
-    "04": "EPIC DNA methylation"
-    "05": "Whole-genome DNA sequencing (WGS)"
-    "06": "TSO500 V1 HRD (TSO500 solid + HRD)"
-    "07": "Whole-transcriptome RNA sequencing (WTS)"
-    "11": "TSO500 DNA V2 manual"
-    "13": "TSO500 RNA V2 manual"
-    "21": "TSO500 DNA V2 Hamilton"
-    "23": "TSO500 RNA V2 Hamilton"
-    "50": "[External] Twist Human Core Exome Plus (DNA)"
-    "51": "[External] TruSeq Stranded mRNA"
-    "XX": "Unknown"
-sample_type_code:
-  code: S
-  choices:
-    N:
-      N: "Normal/control"
-    T:
-      A: "Post Allotransplantation"
-      C: "Cell-line"
-      D: "Distal metastasis, naive"
-      d: "Distal metastasis, post-treatment"
-      E: "Naive"
-      e: "Post treatment"
-      L: "Liquid"
-      M: "Metastasis"
-      P: "Primary tumor, naive"
-      p: "Primary tumor, post-treatment"
-      Q: "Local Relapse"
-      R: "Regional metastasis, naive"
-      r: "Regional metastasis, post-treatment"
-      T: "Primary tumor"
+# description of individual sample id elements
+sample_ID_elements:
+  # hospital-specific project
+  - title: "project_code"
+    # exactly three capital letters
+    format_substring: "PPP"
+    type: string
+    enum:
+      IPA: "InPreD AHUS"
+      IPD: "InPreD OUS"
+      IPH: "InPreD HUS"
+      IPO: "InPreD St. Olav"
+      IPS: "InPreD Stavanger"
+      IPU: "InPreD UNN"
+  # all samples of a given patient should share the same patient code within a specific project
+  - title: "patient_code"
+    # exactly four digits
+    format_substring: "yyyy"
+    type: numeric
+  - title: "nucleic_acid_input_type_code"
+    # exactly one capital letter
+    format_substring: "A"
+    type: string
+    enum:
+      C: "Cell-free samples"
+      D: "DNA"
+      R: "RNA"
+  - title: "assay_type_code"
+    # exactly two digits or XX
+    format_substring: "nn"
+    type: string
+    enum:
+      "01": "TSO500 V1 DNA"
+      "02": "Archer FusionPlex Lung assay"
+      "03": "TSO500 V1 RNA"
+      "04": "EPIC DNA methylation"
+      "05": "Whole-genome DNA sequencing (WGS)"
+      "06": "TSO500 V1 HRD (TSO500 solid + HRD)"
+      "07": "Whole-transcriptome RNA sequencing (WTS)"
+      "11": "TSO500 DNA V2 manual"
+      "13": "TSO500 RNA V2 manual"
+      "21": "TSO500 DNA V2 Hamilton"
+      "23": "TSO500 RNA V2 Hamilton"
+      "50": "[External] Twist Human Core Exome Plus (DNA)"
+      "51": "[External] TruSeq Stranded mRNA"
+      "XX": "Unknown"
+  - title: "sample_type_code"
+    # exactly one letter
+    format_substring: "S"
+    type: string
+    enum:
+      N:
+        N: "Normal/control"
+      T:
+        A: "Post Allotransplantation"
+        C: "Cell-line"
+        D: "Distal metastasis, naive"
+        d: "Distal metastasis, post-treatment"
+        E: "Naive"
+        e: "Post treatment"
+        L: "Liquid"
+        M: "Metastasis"
+        P: "Primary tumor, naive"
+        p: "Primary tumor, post-treatment"
+        Q: "Local Relapse"
+        R: "Regional metastasis, naive"
+        r: "Regional metastasis, post-treatment"
+        T: "Primary tumor"
+        X: "Unknown"
+  - title: "library_preparation_attempt"
+    # exactly one digit
+    format_substring: "x"
+    type: numeric
+    enum:
+      "0": "First try"
+      "1": "Second try (e.g., after cleaning, new extraction)"
+      "2": "Third try"
+      "3": "Fourth try"
+      "4": "Fifth try"
+      "5": "Sixth try"
+      "6": "Seventh try"
+      "7": "Eighth try"
+      "8": "Nineth try"
+      "9": "Validation/verification test;"
+  - title: "biological_replicate"
+    # exactly one digit
+    format_substring: "z"
+    type: numeric
+  - title: "sample_material"
+    # exactly one capital letter
+    format_substring: "M"
+    type: string
+    enum:
+      A: "Archived (FFPE)"
+      B: "Blood"
+      C: "Cytology"
+      E: "Extramedullary"
+      F: "Fresh Frozen"
+      M: "Fresh bone Marrow"
+      S: "Buccal Swab"
       X: "Unknown"
-library_preparation_attempt:
-  code: x
-  choices:
-    "0": "First try"
-    "1": "Second try (e.g., after cleaning, new extraction)"
-    "2": "Third try"
-    "3": "Fourth try"
-    "4": "Fifth try"
-    "5": "Sixth try"
-    "6": "Seventh try"
-    "7": "Eighth try"
-    "8": "Nineth try"
-    "9": "Validation/verification test;"
-biological_replicate:
-  code: z
-sample_material:
-  code: M
-  choices:
-    A: "Archived (FFPE)"
-    B: "Blood"
-    C: "Cytology"
-    E: "Extramedullary"
-    F: "Fresh Frozen"
-    M: "Fresh bone Marrow"
-    S: "Buccal Swab"
-    X: "Unknown"
-tumor_site:
-  code: ll
-  choices:
-    "00": "Cancer origo incerta"
-    "01": "Adrenal Gland"
-    "02": "Ampulla of Vater"
-    "03": "Biliary Tract"
-    "04": "Bladder/Urinary Tract"
-    "05": "Bone"
-    "06": "Breast"
-    "07": "Cervix"
-    "08": "CNS/Brain"
-    "09": "Colon/Rectum"
-    "10": "Esophagus/Stomach"
-    "11": "Eye"
-    "12": "Head and Neck"
-    "13": "Kidney"
-    "14": "Liver"
-    "15": "Lung"
-    "16": "Lymphoid"
-    "17": "Myeloid"
-    "18": "Ovary/Fallopian Tube"
-    "19": "Pancreas"
-    "20": "Peripheral Nervous System"
-    "21": "Peritoneum"
-    "22": "Pleura"
-    "23": "Prostate"
-    "24": "Skin"
-    "25": "Soft Tissue"
-    "26": "Testis"
-    "27": "Thymus"
-    "28": "Thyroid"
-    "29": "Uterus"
-    "30": "Vulva/Vagina"
-    "XX": "Unknown"
+  - title: "tumor_site"
+    # exactly two digits or XX
+    format_substring: "ll"
+    type: string
+    enum:
+      "00": "Cancer origo incerta"
+      "01": "Adrenal Gland"
+      "02": "Ampulla of Vater"
+      "03": "Biliary Tract"
+      "04": "Bladder/Urinary Tract"
+      "05": "Bone"
+      "06": "Breast"
+      "07": "Cervix"
+      "08": "CNS/Brain"
+      "09": "Colon/Rectum"
+      "10": "Esophagus/Stomach"
+      "11": "Eye"
+      "12": "Head and Neck"
+      "13": "Kidney"
+      "14": "Liver"
+      "15": "Lung"
+      "16": "Lymphoid"
+      "17": "Myeloid"
+      "18": "Ovary/Fallopian Tube"
+      "19": "Pancreas"
+      "20": "Peripheral Nervous System"
+      "21": "Peritoneum"
+      "22": "Pleura"
+      "23": "Prostate"
+      "24": "Skin"
+      "25": "Soft Tissue"
+      "26": "Testis"
+      "27": "Thymus"
+      "28": "Thyroid"
+      "29": "Uterus"
+      "30": "Vulva/Vagina"
+      "XX": "Unknown"
