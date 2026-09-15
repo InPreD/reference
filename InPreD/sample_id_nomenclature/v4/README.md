@@ -10,7 +10,13 @@ InPreD/IMPRESS
 
 # Method
 
-`nomenclature.yaml` contains rules on how to name samples within InPreD/IMPRESS depending on any information deemed relevant by the different InPreD nodes (hospitals). The file is manually curated and will be updated if any of the selected `choices` are extended. The file contains the sample id `format`, regular expression for python and the different `choices` for each part of the sample id `format`. Each part contains the `format` letter `code` and parts with distinct choices all of the possible choices. For `sample_type_code`, the choices are divided into two main categories with subcategories. The `tumor_site` code is based on [PCGR](https://sigven.github.io/pcgr/articles/running.html#tumor-site) which was extended with `00` corresponding to `Cancer origo incerta` and `XX` for `Unknown`. The value `0` was excluded.
+The `nomenclature.yaml` document contains rules on how to construct IDs for InPreD samples. The intention was to:
+
+1. standardize all sample IDs within the InPreD project
+2. ensure that the ID format embeds as much relevant meta-information as possible and practical
+3. provide a format that would be short and yet human-readable
+
+The file is manually curated and the lists of recognized value (`enum`) will be updated as necessary (e.g., whenever a new type of assay becomes adopted by InPreD). The file contains the sample ID `format` description, as well as Python regular expression(s) that match valid sample IDs. Each `element` of the sample ID `format` is represented by a unique `format_substring` and a set of valid recognized values (`enum`). In case of the `sample_type_code` element, `enum` is divided into two main categories (tumor/`T` and normal/`N`). The `tumor_site` element `enum` is based on values permissible for [PCGR](https://sigven.github.io/pcgr/articles/running.html#tumor-site)'s `--tumor_site` parameter. In the context of InPreD, value `0`/`00` is understood as `Cancer origo incerta` (rather than PCGR's `Any`). The nomenclature also allows for value of `XX` in cases where the tumor site is not known to the author of the sample ID at time of the sample ID creation (while `Cancer origo incerta` should be used in case of a lacking medical diagnosis).
 
 # Responsible
 
