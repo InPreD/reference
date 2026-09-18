@@ -1,7 +1,7 @@
 # sample ids consist of 4 sections and 9 elements, with the obligatory dashes serving only as section-separators
 format: "PPPyyyy-Ann-Sxz-Mll"
 # regular expression to be used for sample id parsing in Python
-regex_python: "^(?P<project>\w{3})(?P<patient>\d{4})-(?P<input>\w)(?P<assay>\d{2})-(?P<sample>\w)(?P<preparation>\d)(?P<replicate>\d)-(?P<material>\w)(?P<tumor>\d{2})"
+regex_python: '^(?P<project>\w{3})(?P<patient>\d{4})-(?P<input>\w)(?P<assay>\d{2})-(?P<sample>\w)(?P<preparation>\d)(?P<replicate>\d)-(?P<material>\w)(?P<tumor>\d{2})'
 # description of individual sample id elements
 sample_ID_elements:
   # hospital-specific project
