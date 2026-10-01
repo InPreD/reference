@@ -56,6 +56,7 @@ sample_ID_elements:
       # normal sample codes
       N:
         N: "Normal/control"
+      # tumor sample codes
       T:
         A: "Post Allotransplantation"
         C: "Cell-line"
