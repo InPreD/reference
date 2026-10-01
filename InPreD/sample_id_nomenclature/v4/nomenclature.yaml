@@ -53,6 +53,7 @@ sample_ID_elements:
     format_substring: "S"
     type: string
     enum:
+      # normal sample codes
       N:
         N: "Normal/control"
       T:
