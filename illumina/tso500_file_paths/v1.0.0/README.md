@@ -18,11 +18,11 @@ According to the [discussion on github](https://github.com/InPreD/tsoppy/discuss
 1. Convert cupper case abbreviations to lower case. (e.g. `TMB` -> `tmb`)
 1. Non-alphanumeric characters are converted to `_`. (e.g. `.` -> `_`)
 1. Leading and trailing `_` are removed. (e.g. `_cnv_vcf_gz` -> `cnv_vcf_gz`)
-1. If the file name for all workflow type and version combinations is the same it used as the category name. (e.g. `metrics_output_tsv`)
-1. If the file suffix (after sample id) for all workflow type and version combinations is the same it used as the category name. (e.g. `all_fusions_csv`)
+1. If the file name for all workflow type and version combinations is the same it is used as the category name. (e.g. `metrics_output_tsv`)
+1. If the file suffix (after sample id) for all workflow type and version combinations is the same it is used as the category name. (e.g. `all_fusions_csv`)
 1. If the file suffix (after sample id) for all workflow type and version combinations contains the same substrings the substrings are concatenated using `_` and they are used as the category name. (e.g. `sample_sheet_csv`)
 1. If the file suffix (after sample id) for all workflow type and version combinations is shorter than 10 characters the second level directory name is considered, treated similar to the suffix and used as the category name. (e.g. `rna_splice_variant_calling_tsv`)
-1. If none of the rules can be applied choose a descriptive category in snake_case based on the content and format. (e.g. `small_variant_genome_vcf`)
+1. If none of the rules can be applied a descriptive category in snake_case is chosen used on the content and format. (e.g. `small_variant_genome_vcf`)
 
 Each category contains the relevant workflow type and version identifiers as keys and the file path as values, either represented as glob strings (precise path or glob pattern) or format strings (containing `{}` as placeholders for the sample (pair) id). The corresponding type (`glob_string`, `format_string`) is specified under `type`. 
 
