@@ -15,7 +15,7 @@ https://help.tso500software.illumina.com/dragen-tso-500-guides/dragen-tso-500-v2
 According to the [discussion on github](https://github.com/InPreD/tsoppy/discussions), the output files from the different workflow types and versions were grouped into categories if the format and contained information were the same or similar. In case of information being stored differently for different workflow types and versions, the files were given their own category. Category names were generated following these rules:
 
 1. [PascalCase](https://stringcase.org/cases/pascal/) and [camelCase](https://stringcase.org/cases/camel/) is converted to [snake_case](https://stringcase.org/cases/snake/). (e.g. `SampleSheet` -> `sample_sheet`)
-1. Convert cupper case abbreviations to lower case. (e.g. `TMB` -> `tmb`)
+1. Convert upper case abbreviations to lower case. (e.g. `TMB` -> `tmb`)
 1. Non-alphanumeric characters are converted to `_`. (e.g. `.` -> `_`)
 1. Leading and trailing `_` are removed. (e.g. `_cnv_vcf_gz` -> `cnv_vcf_gz`)
 1. If the file name for all workflow type and version combinations is the same it is used as the category name. (e.g. `metrics_output_tsv`)
