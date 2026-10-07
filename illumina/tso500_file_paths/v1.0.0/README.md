@@ -6,7 +6,11 @@
 
 # Origin
 
-https://github.com/InPreD/tsoppy/discussions
+https://github.com/InPreD/tsoppy/discussions/13
+https://github.com/InPreD/tsoppy/discussions/14
+https://github.com/InPreD/tsoppy/discussions/15
+https://github.com/InPreD/tsoppy/discussions/17
+https://github.com/InPreD/tsoppy/discussions/19
 https://support.illumina.com/content/dam/illumina-support/documents/documentation/software_documentation/trusight/trusight-oncology-500/1000000137777_02_tso-500-local-app-v2_2_1-user-guide.pdf
 https://help.tso500software.illumina.com/dragen-tso-500-guides/dragen-tso-500-v2.6/analysis-output
 
