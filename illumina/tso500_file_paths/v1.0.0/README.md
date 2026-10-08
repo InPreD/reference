@@ -28,7 +28,7 @@ According to the [discussion on github](https://github.com/InPreD/tsoppy/discuss
 1. If the file suffix (after sample id) for all workflow type and version combinations is shorter than 10 characters the second level directory name is considered, treated similar to the suffix and used as the category name. (e.g. `rna_splice_variant_calling_tsv`)
 1. If none of the rules can be applied a descriptive category in snake_case is used based on the content and format of the files. (e.g. `small_variant_genome_vcf`)
 
-Each category contains the relevant workflow type and version identifiers as keys and the file path as values, either represented as glob strings (precise path or glob pattern) or format strings (containing `{sample_id}` or `{pair_id}` as placeholders for the sample or pair id, respectively). The corresponding type (`glob_string`, `format_string`) is specified under `type`. 
+Each category contains the relevant workflow type and version identifiers as keys and the relative file path (starting from the workflow's main output directory) as values, either represented as glob strings (precise path or glob pattern) or format strings (containing `{sample_id}` or `{pair_id}` as placeholders for the sample or pair id, respectively). The corresponding type (`glob_string`, `format_string`) is specified under `type`. 
 
 # Responsible
 
