@@ -20,7 +20,15 @@ of the human genome (hg19 or hg38).
 
 Then we keep the gene name and strand columns, sort by gene name and remove duplicates.
 
-The script src/create_gene_strand_file.sh does this process automatically.
+The script ```src/create_gene_strand_file.sh``` does this process automatically.
+
+```
+src/create_gene_strand_file.sh
+
+# Output: ./hg19_gene_strand.txt
+```
+
+The resulting file, ```hg19_gene_strand.txt```, can be used to create the fusviz input table.
 
 # Responsible
 
