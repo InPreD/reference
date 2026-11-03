@@ -1,0 +1,5 @@
+# Biomart database file
+.pybiomart.sqlite
+
+# Virtual environment files
+.venv/*
