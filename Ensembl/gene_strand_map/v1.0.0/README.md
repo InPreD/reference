@@ -1,16 +1,21 @@
 # Files
 
 - README.md
-- hg19_gene_strand.txt
+- hg19_gene_strand_map.txt
+- hg38_gene_strand_map.txt
 - md5sum.txt
-- src7/create_gene_strand_file.sh
 - src/get_human_pcg_annotation.py
 - src/pyproject.toml
 - src/uv.lock
+- src/.gitignore
+
+<br>
 
 # Origin
 
 Gene annotations retrieved from [Ensembl REST API](https://rest.ensembl.org/) via the [*pybiomart*](https://jrderuiter.github.io/pybiomart/) python package.
+
+<br>
 
 # Method
 
@@ -20,22 +25,21 @@ of the human genome (hg19 or hg38).
 
 Then we keep the gene name and strand columns, sort by gene name and remove duplicates.
 
-The script ```src/create_gene_strand_file.sh``` does this process automatically.
+The following chunk shows how to reproduce the results.
 
+<br>
 
-
-```
+```bash
 # Launch the script to get human protein coding gene (pcg) annotation
+# The code assumes user is in the folder: Ensembl/gene_strand_map/v.1.0.0/src
 # -g : genome version (hg19 or hg38)
 # -c : include coordinates (chr, start, end, strand) in the output file
 
-
-for hgv in hg19 hg38
+# for hgv in hg19 hg38
+for hgv in hg19
 do
     tmp_out=${hgv}_gene_strand_map.txt.tmp
-
-    # Remove the tmp suffix
-    gs_out=${hgv}
+    out_file=$(echo "${tmp_out}" | sed 's/\.tmp//')
 
     uv run get_human_pcg_annotation.py \
         -g ${hgv}                      \
@@ -43,19 +47,17 @@ do
         -o ${tmp_out}
 
     # Parse the output file to create a gene strand file 
-    more ${tmp_out} | cut -f4,10 | sort | uniq > hg19_gene_strand.txt
+    more ${tmp_out} | cut -f4,10 | sort | uniq > ${out_file}
 
     # Move gene-strand file to the output directory
-    rm hg19_pcg_annotation.txt
-    mv hg19_gene_strand.txt ../
+    rm ${tmp_out}
+    mv ${out_file} ../
 done
-
-
-
-
 ```
 
-**NOTE:** the command above assumes user run it via *uv*, see installation instructions [here]().
+**NOTE:** the command above assumes user run it via *uv*, see installation instructions [here](https://docs.astral.sh/uv/).
+
+<br>
 
 # Responsible
 
