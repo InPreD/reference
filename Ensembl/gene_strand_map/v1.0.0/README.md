@@ -15,6 +15,8 @@
 
 Gene annotations retrieved from [Ensembl REST API](https://rest.ensembl.org/) via the [*pybiomart*](https://jrderuiter.github.io/pybiomart/) python package.
 
+**NOTE:** it may happen that the Ensembl web service is down (for maintenance or any other inconvenience), it doesn't happen often but it is always better to check whether it is available. Check the status of the server [here](https://status.ensembl.org/).
+
 <br>
 
 # Method
