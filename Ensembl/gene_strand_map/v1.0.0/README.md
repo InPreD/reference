@@ -57,7 +57,7 @@ do
 done
 ```
 
-**NOTE:** the command above assumes user run it via *uv*, see installation instructions [here](https://docs.astral.sh/uv/).
+**NOTE:** the command above assumes the user runs the *python* script it via *uv*, see installation instructions [here](https://docs.astral.sh/uv/).
 
 <br>
 
