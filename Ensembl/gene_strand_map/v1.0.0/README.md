@@ -17,7 +17,7 @@ Gene annotations retrieved from [Ensembl REST API](https://rest.ensembl.org/) vi
 
 # Method
 
-We included a python script to retrieve the gene strands in human genome.
+We included the python script to retrieve the gene strands in human genome.
 The script downloads the annotation of all protein coding genes in a given version 
 of the human genome (hg19 or hg38).
 
