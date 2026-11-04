@@ -25,8 +25,6 @@ Then we keep the gene name and strand columns, sort by gene name and remove dupl
 
 The following chunk shows how to reproduce the results.
 
-<br>
-
 ```bash
 # Launch the script to get human protein coding gene (pcg) annotation
 # The code assumes user is in the folder: Ensembl/gene_strand_map/v.1.0.0/src
