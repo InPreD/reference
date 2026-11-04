@@ -31,8 +31,7 @@ The following chunk shows how to reproduce the results.
 # -g : genome version (hg19 or hg38)
 # -c : include coordinates (chr, start, end, strand) in the output file
 
-# for hgv in hg19 hg38
-for hgv in hg19
+for hgv in hg19 hg38
 do
     tmp_out=${hgv}_gene_strand_map.txt.tmp
     out_file=$(echo "${tmp_out}" | sed 's/\.tmp//')
