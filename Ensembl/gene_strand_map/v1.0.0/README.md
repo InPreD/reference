@@ -11,11 +11,11 @@
 
 # Origin
 
-Gene annotations retrieved from [Ensembl REST API](https://rest.ensembl.org/) via the [*pybiomart*](https://jrderuiter.github.io/pybiomart/) python package.
-
-**NOTE:** it may happen that the Ensembl web service is down (for maintenance or any other inconvenience), it doesn't happen often but it is always better to check whether it is available. Check the status of the server [here](https://status.ensembl.org/).
+All the annotations are taken from [Ensembl](https://www.ensembl.org/), this is simply a way to retrieve and parse those annotations.
 
 # Method
+
+Gene annotations retrieved from [Ensembl REST API](https://rest.ensembl.org/) via the [*pybiomart*](https://jrderuiter.github.io/pybiomart/) python package.
 
 We included the python script to retrieve the gene strands in human genome.
 The script downloads the annotation of all protein coding genes in a given version 
@@ -52,6 +52,8 @@ done
 
 **NOTE:** the command above assumes the user runs the *python* script it via *uv*, see installation instructions [here](https://docs.astral.sh/uv/).
 
+**NOTE:** it may happen that the Ensembl web service is down (for maintenance or any other inconvenience), it doesn't happen often but it is always better to check whether it is available. Check the status of the server [here](https://status.ensembl.org/).
+
 # Responsible
 
-@jaimicore
+[@jaimicore](https://github.com/jaimicore)
