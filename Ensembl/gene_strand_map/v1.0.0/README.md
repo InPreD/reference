@@ -17,13 +17,13 @@ Gene annotations retrieved from [Ensembl REST API](https://rest.ensembl.org/) vi
 
 # Method
 
-We included a python script to retrieve the gene strands in human genome.
+We included the python script to retrieve the gene strands in human genome.
 The script downloads the annotation of all protein coding genes in a given version 
 of the human genome (hg19 or hg38).
 
 Then we keep the gene name and strand columns, sort by gene name and remove duplicates.
 
-The following chunk shows how to reproduce the results.
+The following chunk of code shows how to reproduce the results.
 
 ```bash
 # Launch the script to get human protein coding gene (pcg) annotation
