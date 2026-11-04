@@ -35,7 +35,7 @@ The following chunk of code shows how to reproduce the results.
 for hgv in hg19
 do
     tmp_out=${hgv}_gene_strand_map.txt.tmp
-    out_file=$(echo "${tmp_out}" | sed 's/\.tmp//')
+    out_file=${tmp_out%.tmp}
 
     uv run get_human_pcg_annotation.py \
         -g ${hgv}                      \
