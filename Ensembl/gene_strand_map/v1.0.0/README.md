@@ -9,8 +9,6 @@
 - src/uv.lock
 - src/.gitignore
 
-<br>
-
 # Origin
 
 Gene annotations retrieved from [Ensembl REST API](https://rest.ensembl.org/) via the [*pybiomart*](https://jrderuiter.github.io/pybiomart/) python package.
