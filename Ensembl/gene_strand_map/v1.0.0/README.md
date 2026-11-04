@@ -23,7 +23,7 @@ of the human genome (hg19 or hg38).
 
 Then we keep the gene name and strand columns, sort by gene name and remove duplicates.
 
-The following chunk shows how to reproduce the results.
+The following chunk of code shows how to reproduce the results.
 
 ```bash
 # Launch the script to get human protein coding gene (pcg) annotation
