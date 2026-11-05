@@ -1,0 +1,11 @@
+[project]
+name = "src"
+version = "1.0.0"
+description = "Scripts to retrieve human genome annotations (Ensemble API) via pybiomart library"
+readme = ""
+requires-python = ">=3.12"
+dependencies = [
+    "polars>=2.1.0",
+    "pyarrow>=26.0.0",
+    "pybiomart>=0.2.0",
+]
