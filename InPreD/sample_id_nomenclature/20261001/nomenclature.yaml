@@ -1,7 +1,7 @@
-# sample ids consist of 4 sections and 9 elements, with the obligatory dashes serving only as section-separators
+# sample ids consist of 4 sections and 8 elements, with the obligatory dashes serving only as section-separators
 format: "PPPyyyy-Ann-Sxz-Mll"
 # regular expression to be used for sample id parsing in Python
-regex_python: '^(?P<project>[A-Z]{3})(?P<patient>\d{4})-(?P<input>[A-Z])(?P<assay>\d{2}|XX)-(?P<sample>[A-Za-z])(?P<preparation>\d)(?P<replicate>\d)-(?P<material>[A-Z])(?P<tumor>\d{2}|XX)$'
+regex_python: '^(?P<project>[A-Z]{3})(?P<patient>\d{4})-(?P<assay>[DR](?:\d{2}|XX))-(?P<sample>[A-Za-z])(?P<preparation>\d)(?P<replicate>\d)-(?P<material>[A-Z])(?P<tumor>\d{2}|XX)$'
 # description of individual sample id elements
 sample_ID_elements:
   # hospital-specific project
@@ -21,33 +21,28 @@ sample_ID_elements:
     # exactly four digits
     format_substring: "yyyy"
     type: numeric
-  - title: "nucleic_acid_input_type_code"
-    # exactly one capital letter
-    format_substring: "A"
-    type: string
-    enum:
-      C: "Cell-free samples"
-      D: "DNA"
-      R: "RNA"
   - title: "assay_type_code"
-    # exactly two digits or XX
-    format_substring: "nn"
+    # consists of two pieces of information:
+    # 1. nucleic acid input type: D = DNA, R = RNA
+    # 2. assay: exactly two digits or XX
+    format_substring: "Ann"
     type: string
     enum:
-      "01": "TSO500 V1 DNA"
-      "02": "Archer FusionPlex Lung assay"
-      "03": "TSO500 V1 RNA"
-      "04": "EPIC DNA methylation"
-      "05": "Whole-genome DNA sequencing (WGS)"
-      "06": "TSO500 V1 HRD (TSO500 solid + HRD)"
-      "07": "Whole-transcriptome RNA sequencing (WTS)"
-      "11": "TSO500 DNA V2 manual"
-      "13": "TSO500 RNA V2 manual"
-      "21": "TSO500 DNA V2 Hamilton"
-      "23": "TSO500 RNA V2 Hamilton"
-      "50": "[External] Twist Human Core Exome Plus (DNA)"
-      "51": "[External] TruSeq Stranded mRNA"
-      "XX": "Unknown"
+      "D01": "TSO500 V1 DNA"
+      "R02": "Archer FusionPlex Lung assay"
+      "R03": "TSO500 V1 RNA"
+      "D04": "EPIC DNA methylation"
+      "D05": "Whole-genome DNA sequencing (WGS)"
+      "D06": "TSO500 V1 HRD (TSO500 solid + HRD)"
+      "R07": "Whole-transcriptome RNA sequencing (WTS)"
+      "D11": "TSO500 DNA V2 manual"
+      "R13": "TSO500 RNA V2 manual"
+      "D21": "TSO500 DNA V2 Hamilton"
+      "R23": "TSO500 RNA V2 Hamilton"
+      "D50": "[External] Twist Human Core Exome Plus (DNA)"
+      "R51": "[External] TruSeq Stranded mRNA"
+      "DXX": "DNA, unknown assay"
+      "RXX": "RNA, unknown assay"
   - title: "sample_type_code"
     # exactly one letter
     format_substring: "S"
